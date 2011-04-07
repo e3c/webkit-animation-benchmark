@@ -7,9 +7,9 @@ div#screen {
     display:block;
     width:1280px;
     height:720px;
-/*    border:2px solid black;
+/*    border:2px solid black;*/
     opacity:0;
-    -webkit-transition:all 3s linear;*/
+    -webkit-transition:all 3s linear;
 }
 
 div#screen > div {

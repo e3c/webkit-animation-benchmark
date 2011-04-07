@@ -21,64 +21,40 @@
 	                <img src="images/5.jpg" />
 	                <img src="images/6.jpg" />
 	            </div>
-	            <!--<div id="fade">
+	            <div id="fade">
 	                <img src="images/7.jpg" />
-                </div>-->
+                </div>
 	        </div>
 	        <div id="block3">
 	            <img src="images/e3c.png" style="display:block; margin:64px 64px 0px 0px; float:right;" />
 	        </div>
 	    </div>
         <script>
-//            var load = function() { a("screen").style.opacity = "1"; setInterval(effect, 4000); }
-//            setTimeout(load, 1500);
+            var load = function() { a("screen").style.opacity = "1"; setInterval(effect, 4000); }
+            setTimeout(load, 1500);
             
             var i, j, k, t = 0;
             var a = function (id) { return document.getElementById(id); }
             
             //css effects
-//            var slide = function() { if (i) { a("slide").style.top = "0px"; i = 0; } else { a("slide").style.top = "-1440px"; i = 1; } }
-//            var slide2 = function() { if (j) { a("slide2").style.left = "0px"; j = 0; } else { a("slide2").style.left = "-800px"; j = 1; } }
-//            var fade = function(){ if (k) { a("fade").getElementsByTagName("img")[0].style.opacity = "1"; k = 0; } else { a("fade").getElementsByTagName("img")[0].style.opacity = "0"; k = 1; } }
+            var slide = function() { if (i) { a("slide").style.top = "0px"; i = 0; } else { a("slide").style.top = "-1440px"; i = 1; } }
+            var slide2 = function() { if (j) { a("slide2").style.left = "0px"; j = 0; } else { a("slide2").style.left = "-800px"; j = 1; } }
+            var fade = function(){ if (k) { a("fade").getElementsByTagName("img")[0].style.opacity = "1"; k = 0; } else { a("fade").getElementsByTagName("img")[0].style.opacity = "0"; k = 1; } }
 
-            //jseffects
-            var slide = function() {
-                var e = a("slide");
-                if (i) {
-                    e.style.top = (parseInt(e.style.top) + 20) + "px";
-                    
-                    if (parseInt(e.style.top) == 0) {
-                        i = 0;
-                        clearInterval(t);
-                    }
-                } else {
-                    e.style.top = (parseInt(e.style.top) - 20) + "px";
-                    if (parseInt(e.style.top) == -1440) {
-                        i = 1;
-                        clearInterval(t);
-                    }
+            var effect = function() {
+                var x = Math.floor(Math.random() * 3);
+                switch(x) {
+                    case 0:
+                        slide();
+                        break;
+                    case 1:
+                        slide2();
+                        break;
+                    case 2:
+                        fade();
+                        break;
                 }
             }
-
-//            var effect = function() {
-//                var x = Math.floor(Math.random() * 3);
-//                switch(x) {
-//                    case 0:
-//                        slide();
-//                        break;
-//                    case 1:
-//                        slide2();
-//                        break;
-//                    case 2:
-//                        fade();
-//                        break;
-//                }
-//            }
-
-            var slider = function() { t = setInterval(slide, 10); }
-
-            setInterval(slider, 4000);
-//            setInterval(slide2, 4000);
         </script>
 	</body>
 </html>
