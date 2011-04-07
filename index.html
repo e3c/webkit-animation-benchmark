@@ -17,7 +17,7 @@
                 </div>
 	        </div>
 	        <div id="block2">
-                <div id="slide2">
+                <div id="slide2" style="left:0px;">
 	                <img src="images/5.jpg" />
 	                <img src="images/6.jpg" />
 	            </div>
@@ -30,30 +30,70 @@
 	        </div>
 	    </div>
         <script>
-            var i, t = 0;
+            var i, j, t = 0;
+            var b, c = false;
+            
+            var s = 10;
+            
             var a = function (id) { return document.getElementById(id); }
             
             var slide = function() {
+                if (b) return;
                 var e = a("slide");
+                var x = parseInt(e.style.top);
                 if (i) {
-                    e.style.top = (parseInt(e.style.top) + 20) + "px";
+                    e.style.top = (x + s) + "px";
                     
-                    if (parseInt(e.style.top) == 0) {
+                    if (x == (-s)) {
                         i = 0;
-                        clearInterval(t);
+                        b = true;
                     }
                 } else {
-                    e.style.top = (parseInt(e.style.top) - 20) + "px";
-                    if (parseInt(e.style.top) == -1440) {
+                    e.style.top = (x - s) + "px";
+                    
+                    if (x == (-1440 + s)) {
                         i = 1;
-                        clearInterval(t);
+                        b = true;
                     }
                 }
             }
 
-            var slider = function() { t = setInterval(slide, 10); }
+            var slide2 = function() {
+                if (c) return;
+                var e = a("slide2");
+                var x = parseInt(e.style.left);
+                if (j) {
+                    e.style.left = (x + s) + "px";
+                    
+                    if (x == (-s)) {
+                        j = 0;
+                        c = true;
+                    }
+                } else {
+                    e.style.left = (x - s) + "px";
+                    
+                    if (x == (-800 + s)) {
+                        j = 1;
+                        c = true;
+                    }
+                }
+            }
+            
+            var run = function(){
+                slide();
+                slide2();
+            }
 
-            setInterval(slider, 4000);
+            function launcher(){
+                t = setInterval(run, 20);
+                b = c = false;
+                
+                if ((b == c) == false) {
+                    setTimeout(launcher, 6000);
+                }
+            }
+            
+            setTimeout(launcher, 6000);
         </script>
 	</body>
 </html>

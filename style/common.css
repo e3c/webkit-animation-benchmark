@@ -7,9 +7,6 @@ div#screen {
     display:block;
     width:1280px;
     height:720px;
-/*    border:2px solid black;
-    opacity:0;
-    -webkit-transition:all 3s linear;*/
 }
 
 div#screen > div {
@@ -28,7 +25,6 @@ div#slide {
     position:absolute;
     overflow:hidden;
     height:1920px;
-/*    -webkit-transition:all 2s linear;*/
 }
 
 div#slide img {
@@ -50,7 +46,6 @@ div#slide2 {
     position:absolute;
     overflow:hidden;
     width:1600px;
-    -webkit-transition:all 1s linear;
 }
 
 div#slide2 img {
@@ -66,7 +61,6 @@ div#slide2 img {
 div#fade img {
     position:absolute;
 	left:0;
-	-webkit-transition: opacity 2s linear;
 }
 
 div#block3 {
